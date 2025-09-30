@@ -1,0 +1,102 @@
+/* Cart Container */
+.cart-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #1d1d1f;
+  background-color: #f9f9f9;
+  min-height: 80vh;
+}
+
+/* Page Title */
+.cart-container h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #111;
+}
+
+/* Empty Cart Text */
+.cart-container p {
+  font-size: 1rem;
+  text-align: center;
+  color: #555;
+}
+
+/* Cart Item Card */
+.cart-item {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cart-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Item Name and Price */
+.cart-item h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cart-item p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin: 0 20px 0 0;
+}
+
+/* Remove Button */
+.remove-btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 25px;
+  background-color: #ff3b30; /* Apple red */
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.remove-btn:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}
+
+.remove-btn:active {
+  background-color: #b71c1c;
+  transform: scale(0.95);
+}
+.checkout-btn {
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  background-color: #34c759;  /* Green like Apple Pay */
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #28a745;
+  transform: scale(1.05);
+}
+
+.checkout-btn:active {
+  background-color: #1e7e34;
+  transform: scale(0.98);
+}

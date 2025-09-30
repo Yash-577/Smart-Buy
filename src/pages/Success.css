@@ -1,0 +1,67 @@
+/* Success.css */
+
+.success-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  background: linear-gradient(to right, #f0f4f8, #d9e2ec);
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #102a43;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.success-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #0b4c6e;
+}
+
+.success-container button {
+  background-color: #0074d4;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.success-container button:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.success-container button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional: Responsive text */
+@media (max-width: 480px) {
+  .success-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .success-container button {
+    width: 100%;
+    padding: 0.75rem 0;
+  }
+}

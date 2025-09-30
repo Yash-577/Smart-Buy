@@ -1,0 +1,111 @@
+/* Container */
+.shop-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #1d1d1f;
+}
+
+/* Page Title */
+.shop-container h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #111;
+}
+
+/* Product Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* Product Card */
+.product-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Product Image */
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+/* Product Name */
+.product-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1d1d1f;
+}
+
+/* Product Price */
+.product-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Buy Button */
+.buy-btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 30px;
+  background-color: #0071e3; /* Apple Blue */
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.buy-btn:hover {
+  background-color: #005bb5;
+  transform: scale(1.05);
+}
+
+.buy-btn:active {
+  background-color: #004494;
+  transform: scale(0.98);
+}
+/* Add to your Shop.css */
+.product-card img:not([src]),
+.product-card img[src=""],
+.product-card img[src="undefined"],
+.product-card img[src="null"] {
+  display: none;
+}
+
+/* Hide broken images */
+.product-card img {
+  position: relative;
+}
+
+.product-card img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
