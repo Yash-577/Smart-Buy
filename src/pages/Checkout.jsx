@@ -22,11 +22,12 @@ function Checkout() {
     try {
       const stripe = await stripePromise;
 
-      const response = await fetch("http://localhost:5000/create-checkout-session", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ cart }),
-      });
+   const response = await fetch("/api/create-checkout-session", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ cart }),
+});
+
 
       const session = await response.json();
 
