@@ -26,7 +26,9 @@ export default async function handler(req, res) {
 
   try {
     const { cart } = req.body;
-    if (!cart || cart.length === 0) return res.status(400).json({ error: "Cart is empty" });
+    if (!cart || cart.length === 0) {
+      return res.status(400).json({ error: "Cart is empty" });
+    }
 
     const line_items = cart.map(item => ({
       price_data: {
@@ -37,12 +39,15 @@ export default async function handler(req, res) {
       quantity: item.quantity || 1,
     }));
 
+    // Use req.headers.origin for dynamic absolute URLs
+    const origin = req.headers.origin || "http://localhost:3000";
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
       line_items,
-      success_url: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/cancel`,
+      success_url: `${origin}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${origin}/cancel`,
     });
 
     // Save order in Firebase
