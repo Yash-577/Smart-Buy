@@ -2,7 +2,7 @@
 import { createContext, useEffect, useState } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth, database } from "../firebase/firebaseConfig";
-import { ref, onValue } from "firebase/database";
+import { ref, get } from "firebase/database";
 
 export const AuthContext = createContext();
 
@@ -12,23 +12,25 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
       setCurrentUser(user);
-
+      
       if (user) {
-        const roleRef = ref(database, `roles/${user.uid}`);
-
-        // 👇 listen for role updates
-        onValue(roleRef, (snapshot) => {
+        try {
+          const roleRef = ref(database, `roles/${user.uid}`);
+          const snapshot = await get(roleRef); // Use get() instead of onValue()
           const val = snapshot.val();
           console.log("📥 Role fetched from DB:", val);
           setRole(val || "user");
-          setLoading(false); // ✅ only after role is fetched
-        });
+        } catch (error) {
+          console.error("Error fetching role:", error);
+          setRole("user"); // Default to user if error
+        }
       } else {
         setRole(null);
-        setLoading(false); // no user, stop loading
       }
+      
+      setLoading(false); // ✅ Always set to false after checking role
     });
 
     return () => unsubscribe();
