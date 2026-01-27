@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 import "./Home.css";
 
-
 function Home() {
   const navigate = useNavigate();
   const { addToCart } = useContext(CartContext);
@@ -13,24 +12,28 @@ function Home() {
   };
 
   const handleBuy = (product) => {
-    addToCart(product);      // 1) add item to Firebase cart
-    navigate("/cart");       // 2) go to Cart page
+    addToCart(product);
+    navigate("/cart");
   };
 
   return (
-    <div>
-      {/* Hero Banner */}
+    <main>
+      {/* Hero Section */}
       <section className="hero">
-        <h1>Welcome to MyShop 🛒</h1>
-        <p>Best deals on electronics, fashion, and more!</p>
+        <h1>Shop Smart with Smart Buy</h1>
+        <p>
+          Find the best deals on electronics, fashion, and home essentials —
+          optimized for mobile users.
+        </p>
         <button onClick={goToShop}>Shop Now</button>
       </section>
 
       {/* Featured Products */}
       <section className="featured">
         <h2>Featured Products</h2>
+
         <div className="grid">
-          <div className="product-card">
+          <article className="product-card">
             <h3>iPhone 14</h3>
             <p>₹79,999</p>
             <button
@@ -40,9 +43,9 @@ function Home() {
             >
               Buy
             </button>
-          </div>
+          </article>
 
-          <div className="product-card">
+          <article className="product-card">
             <h3>Adidas Shoes</h3>
             <p>₹3,999</p>
             <button
@@ -52,9 +55,9 @@ function Home() {
             >
               Buy
             </button>
-          </div>
+          </article>
 
-          <div className="product-card">
+          <article className="product-card">
             <h3>Laptop</h3>
             <p>₹40,000</p>
             <button
@@ -64,11 +67,11 @@ function Home() {
             >
               Buy
             </button>
-          </div>
+          </article>
 
-          <div className="product-card">
+          <article className="product-card">
             <h3>Bedsheet</h3>
-            <p>₹1500</p>
+            <p>₹1,500</p>
             <button
               onClick={() =>
                 handleBuy({ id: 5, name: "Bedsheet", price: 1500 })
@@ -76,11 +79,11 @@ function Home() {
             >
               Buy
             </button>
-          </div>
+          </article>
 
-          <div className="product-card">
+          <article className="product-card">
             <h3>Doormat</h3>
-            <p>₹1000</p>
+            <p>₹1,000</p>
             <button
               onClick={() =>
                 handleBuy({ id: 4, name: "Doormat", price: 1000 })
@@ -88,12 +91,11 @@ function Home() {
             >
               Buy
             </button>
-          </div>
+          </article>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
 
 export default Home;
-
