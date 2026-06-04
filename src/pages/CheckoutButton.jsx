@@ -2,6 +2,7 @@ import { loadStripe } from "@stripe/stripe-js";
 
 // Use your Stripe Publishable Key here
 const stripePromise = loadStripe("pk_test_51SC2yCRs5wVBbQiVq9DMoDFiopYRuWw1fUCFtxgFUAT7JldcmZfMJ8U8R6j7X9txUFpsgwt49qhS4CZD0vp5mstp00f8AlowWm");
+
 const CheckoutButton = ({ cart }) => {
   const _handleCheckout = async () => {
     try {
@@ -23,8 +24,6 @@ const CheckoutButton = ({ cart }) => {
       console.error("Checkout error:", err);
     }
   };
-
-  
 };
 
 export default CheckoutButton;
