@@ -36,11 +36,7 @@ function Home() {
           <article className="product-card">
             <h3>iPhone 14</h3>
             <p>₹79,999</p>
-            <button
-              onClick={() =>
-                handleBuy({ id: 8, name: "iPhone 14", price: 79999 })
-              }
-            >
+            <button onClick={() => handleBuy({ id: 8, name: "iPhone 14", price: 79999 })}>
               Buy
             </button>
           </article>
@@ -48,11 +44,7 @@ function Home() {
           <article className="product-card">
             <h3>Adidas Shoes</h3>
             <p>₹3,999</p>
-            <button
-              onClick={() =>
-                handleBuy({ id: 6, name: "Adidas Shoes", price: 3999 })
-              }
-            >
+            <button onClick={() => handleBuy({ id: 6, name: "Adidas Shoes", price: 3999 })}>
               Buy
             </button>
           </article>
@@ -60,24 +52,16 @@ function Home() {
           <article className="product-card">
             <h3>Laptop</h3>
             <p>₹40,000</p>
-            <button
-              onClick={() =>
-                handleBuy({ id: 7, name: "Laptop", price: 40000 })
-              }
-            >
+            <button onClick={() => handleBuy({ id: 7, name: "Laptop", price: 40000 })}>
               Buy
             </button>
           </article>
 
           <article className="product-card">
             <h3>Shirt</h3>
-            <img src="https://image.hm.com/assets/hm/69/fe/69feb218e7a1c2d94bcaa342cd4c45a63ffd2242.jpg?imwidth=1536" alt="Shirt"></img>
+            <img src="https://image.hm.com/assets/hm/69/fe/69feb218e7a1c2d94bcaa342cd4c45a63ffd2242.jpg?imwidth=1536" alt="Shirt" />
             <p>₹1,500</p>
-            <button
-              onClick={() =>
-                handleBuy({ id: 5, name: "Bedsheet", price: 1500 })
-              }
-            >
+            <button onClick={() => handleBuy({ id: 5, name: "Bedsheet", price: 1500 })}>
               Buy
             </button>
           </article>
@@ -85,11 +69,7 @@ function Home() {
           <article className="product-card">
             <h3>Doormat</h3>
             <p>₹1,000</p>
-            <button
-              onClick={() =>
-                handleBuy({ id: 4, name: "Doormat", price: 1000 })
-              }
-            >
+            <button onClick={() => handleBuy({ id: 4, name: "Doormat", price: 1000 })}>
               Buy
             </button>
           </article>
