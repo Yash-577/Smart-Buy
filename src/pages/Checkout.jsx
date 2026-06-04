@@ -3,7 +3,6 @@ import { CartContext } from "../context/CartContext";
 import { ref, push } from "firebase/database";
 import { database } from "../firebase/firebaseConfig";
 import "./Checkout.css";
-import { useNavigate } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 
 const stripePromise = loadStripe("pk_test_51SC2yCRs5wVBbQiVq9DMoDFiopYRuWw1fUCFtxgFUAT7JldcmZfMJ8U8R6j7X9txUFpsgwt49qhS4CZD0vp5mstp00f8AlowWm");
@@ -11,8 +10,6 @@ const stripePromise = loadStripe("pk_test_51SC2yCRs5wVBbQiVq9DMoDFiopYRuWw1fUCFt
 function Checkout() {
   const { cart, removeFromCart } = useContext(CartContext);
   const [processing, setProcessing] = useState(false);
-  const navigate = useNavigate();
-
   const total = cart.reduce((sum, item) => sum + item.price, 0);
 
   const handlePayment = async () => {
