@@ -71,7 +71,7 @@ function Home() {
 
           <article className="product-card">
             <h3>Shirt</h3>
-            <img src="https://image.hm.com/assets/hm/69/fe/69feb218e7a1c2d94bcaa342cd4c45a63ffd2242.jpg?imwidth=1536"></img>
+            <img src="https://image.hm.com/assets/hm/69/fe/69feb218e7a1c2d94bcaa342cd4c45a63ffd2242.jpg?imwidth=1536" alt="Shirt"></img>
             <p>₹1,500</p>
             <button
               onClick={() =>
